@@ -1,8 +1,8 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Hashim PK
- * Date: 3/24/2016
+ * User: HASHIM PK
+ * Date: 3/24/2018
  * Time: 4:40 PM
  */
 namespace Qudratom\Traits;
