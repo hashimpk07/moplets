@@ -1,14 +1,15 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Hashim PK
+ * Date: 3/24/2016
+ * Time: 4:40 PM
+ */
 namespace Qudratom\Traits;
 use Illuminate\Support\Facades\Input;
 use Qudratom\Utilities\RecordNo;
 
-/**
- * Created by PhpStorm.
- * User: nithin
- * Date: 3/24/2016
- * Time: 4:40 PM
- */
+
 Trait ModelTrait
 {
 
