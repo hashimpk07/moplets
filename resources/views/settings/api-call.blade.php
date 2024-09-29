@@ -1,0 +1,81 @@
+<div class="col-md-6">
+	<!-- Horizontal Form -->
+	<div class="box box-info">
+		<div class="element-08 with-border"></div><!-- /.box-header -->
+		<!-- form start -->
+		<div id="apiCallAddWrap">
+			<div id="api-callAddContainer">
+					<?php echo Form::open(array( 'url' => 'settings/onApiIncome', 'id' => 'apiCallAddWrap', 'class' => 'form-horizontal' ) );  ?>
+				<div class="box-header with-border">
+					<h3 class="box-title">Request to IVR server</h3>
+				</div>
+
+				<div class="box-body ">
+					<div class="form-group">
+
+						<label for="ivrKey" class="col-md-5 control-label">API Authentication Key</label>
+
+						<div class="col-md-7">
+							<input type="text" class="form-control"
+								   name="ivrKey" id="ivrKey" placeholder="Ivr Key" value="{{ $IVR_KEY }}" >
+							<label class="qrd-error" id="eivrKey"></label>
+						</div>
+					</div>
+					<div class="form-group">
+
+						<label for="urlFormat" class="col-md-5 control-label">URL
+							Format</label>
+
+						<div class="col-md-7">
+							<input type="text" class="form-control"
+								   name="urlFormat" id="urlFormat"
+								   placeholder="Url" value="{{ $IVR_URL_FORMAT }}">
+                                <label style="font-size: 0.9em;font-weight:normal;">http://moplet.com/api.php?api_key={apikey}&ivr={ivr}&numbers={phone}</label>
+
+
+						</div>
+
+					</div>
+
+					<div class="form-group">
+						<label for="characterPosition" class="col-md-5 control-label">IVR response character Position
+						</label>
+
+						<div class="col-md-7 timer">
+							<div class="col-xs-4">
+								<input type="number" name="characterPosition" id="characterPosition" class="form-control "
+									   placeholder="1" value="{{ $DTMF_CHARACTER_POSITION }}">
+							</div>
+						</div>
+
+					</div>
+				</div><!-- /.box-body -->
+
+
+				<div class="box-footer">
+					<button class="btn btn-info_108" type="submit">
+						Save
+					</button>
+				</div>
+				<!-- /.box-footer -->
+
+             </form>
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+<script type="text/javascript">
+
+	function doApiCallValidation()
+	{
+		return true ;
+	}
+
+	document.addEventListener('onPageReady', function (e) {
+		submitForm('apiCallAddWrap', doApiCallValidation, null, ' ', true, {} );
+	}) ;
+
+</script>

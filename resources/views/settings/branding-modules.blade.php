@@ -1,0 +1,43 @@
+<div class="col-sm-6">
+	<div class="box box-info" id="brandModuleAddWrap ">
+		<?php echo Form::open(array( 'url' => 'settings/onBrandingModules', 'id' => 'brandModuleAddWrap', 'class' => 'form-horizontal' ) );  ?>
+		<div class="box-header with-border">
+
+			<h3 class="box-title">Activate Modules</h3>
+
+			<div class="elements-5">
+
+				<div class="region-1">
+					<input type="checkbox" id="region" name="region" value="1"  {{ $MODULE_REGION == '1' ? 'checked' :'' }}> Region
+				</div>
+				<div class="branch-1">
+					<input type="checkbox" id="branch" name="branch" value="1" {{ $MODULE_BRANCH == '1' ? 'checked' :'' }}> Branch
+				</div>
+				<div class="embloyee-1">
+					<input type="checkbox" id="employee" name="employee" value="1" {{ $MODULE_EMPLOYEE == '1' ? 'checked' :'' }}> Employees
+				</div>
+			</div>
+		</div>
+		<div class="user-logo">
+
+			<div class="tic-1">
+				<div class="box-footer">
+					<button type="submit" class="btn btn-info_108">Save
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+
+	function doBrandingModuleWrapValidation()
+	{
+		return true ;
+	}
+
+	document.addEventListener('onPageReady', function (e) {
+		submitForm('brandModuleAddWrap', doBrandingModuleWrapValidation, null, ' ', true, {} );
+	}) ;
+
+</script>

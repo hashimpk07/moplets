@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ CONST_BRAND_NAME  }}</title>
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <?php echo Html::style('public/assets/css/bootstrap.min.css'); ?>
+
+            <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- Theme style -->
+
+    <?php echo Html::style('public/assets/dist/css/AdminLTE.min.css'); ?>
+    <?php echo Html::style('public/assets/css/datepicker.min.css'); ?>
+    <?php echo Html::style('public/assets/css/bootstrap-timepicker.min.css'); ?>
+    <?php echo Html::style('public/assets/css/bootstrap-colorpicker.min.css'); ?>
+            <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <?php echo Html::style('public/assets/dist/css/skins/_all-skins.min.css'); ?>
+    <?php echo Html::style('public/assets/dist/css/skins/select2.min.css'); ?>
+
+
+
+            <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <!-- copied form footer -->
+
+    <!-- ./wrapper -->
+    <!-- jQuery 2.1.4 -->
+    <!--<script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>-->
+    <?php echo Html::script( 'public/assets/plugins/jQuery/jQuery-2.1.4.min.js' ); ?>
+
+            <!-- Bootstrap 3.3.5 -->
+    <?php echo Html::script( "public/assets/js/moment.min.js" );?>
+            <!--<script src="../../bootstrap/js/bootstrap.min.js"></script>-->
+    <?php echo Html::script( "public/assets/js/bootstrap.min.js" );?>
+
+            <!-- FastClick -->
+    <!--<script src="../../plugins/fastclick/fastclick.min.js"></script>-->
+    <?php echo Html::script( 'public/assets/plugins/fastclick/fastclick.min.js' ); ?>
+
+            <!-- AdminLTE App -->
+    <!--<script src="../../dist/js/app.min.js"></script>-->
+
+    <!-- AdminLTE for demo purposes -->
+    <!--<script src="../../dist/js/demo.js"></script>-->
+    <?php echo Html::script( 'public/assets/dist/js/demo.js' ); ?>
+            <!-- Giftlist specific plugin scripts -->
+
+    <?php echo Html::script('public/assets/js/jquery.form.js'); ?>
+    <?php echo Html::script('public/assets/js/qrd.js'); ?>
+
+    <?php echo Html::script('public/assets/plugins/select2/select2.full.min.js'); ?>
+    <?php echo Html::script('public/assets/js/jquery.sparkline.js'); ?>
+
+
+    <?php echo Html::script( 'public/assets/js/daterangepicker.min.js' ); ?>
+    <?php echo Html::script( 'public/assets/js/bootstrap-datepicker.min.js' ); ?>
+    <?php echo Html::script( 'public/assets/js/app.min.js' ); ?>
+
+    <?php echo Html::script( 'public/assets/js/bootstrap-colorpicker.min.js' ); ?>
+    <?php echo Html::script( 'public/assets/js/bootstrap-timepicker.min.js' ); ?>
+
+</head>
+<style>
+    .btn-info_108 {
+        background-color: {{CONST_BRAND_COLOR}};
+        border-color: #ddd;
+    }
+    .skin-blue .sidebar-menu > li:hover > a,
+    .skin-blue .sidebar-menu > li.active > a {
+        color: #020202;
+        background: #ececec;
+        border-left-color: {{CONST_BRAND_COLOR}};
+    }
+    .nav-tabs-custom > .nav-tabs > li.active {
+        border-top-color : {{CONST_BRAND_COLOR}};
+    }
+    .skin-blue .main-header li.user-header {
+        background-color: {{CONST_BRAND_COLOR}};
+    }
+    .button-row {
+        background-color : {{CONST_BRAND_COLOR}};
+
+
+    }
+    .button-row {
+        background-color : {{CONST_BRAND_COLOR}};
+
+
+    }
+    .button-rows {
+
+        background-color : {{CONST_BRAND_COLOR}};
+        border: 1px solid #367fa9;
+        border-radius: 3px;
+        height: 30px;
+        margin: 0px 10px 0px 0px;
+        width: 100px
+
+
+    }
+
+
+</style>
+
+@section('BRAND_COLOR', CONST_BRAND_COLOR)
+@section('BRAND_IMAGE', \Qudratom\Utilities\FileUpload::downloadUrl(CONST_BRAND_IMAGE))
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <header class="main-header">
+
+        <div style="z-index: 9999;display: none;position: fixed; top: 0px; left: calc(50% - 10px); background: transparent;" id="idWaitArea">
+            {!! HTML::image("public/assets/images/loading.gif", "Loading...") !!}
+        </div>
+
+        <div id="idMsgArea">
+            <span id="idSuccessMsg"></span>
+            <span id="idFailureMsg"></span>
+        </div>
+
+        <!-- Logo -->
+        <a href="#" class="btn-info_108 logo" style="background-color: @yield('BRAND_COLOR'); ">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini">{{ substr(CONST_BRAND_NAME,0,1) }}</span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><img src="@yield('BRAND_IMAGE')" style=" max-height: 84px;max-width: 54px;" ></span>
+
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top btn-info_108" style="background-color: @yield('BRAND_COLOR'); ">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+       <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <!-- Messages: style can be found in dropdown.less-->
+
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="<?php echo url();?>/public/assets/dist/img/user222.jpg" class="user-image" alt="User Image">
+                            <span class="hidden-xs">{{ Auth::user()->name }}</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            <li class="user-header btn-info_108">
+                                <p>
+                                    {{ \Illuminate\Support\Facades\Auth::User() ->name }}
+                                </p>
+                            </li>
+                            @if( \Illuminate\Support\Facades\Auth::User()->id != ADMIN_ID )
+                            <li >
+                                    <a href="profile">
+                                        <i class="ace-icon fa fa-user"></i>
+                                   Profile</a>
+
+                            </li>
+                            @endif
+
+                            <li>
+                                <a href="password">
+                                    <i class="ace-icon fa fa-unlock-alt"></i>
+                                    Change Password
+                                </a>
+                            </li>
+
+                            <li class="divider"></li>
+                            <li>
+
+                                <a href="{{ action('LoginController@logout') }}">
+                                    <i class="ace-icon fa fa-power-off"></i>
+                                    Logout
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <!-- Control Sidebar Toggle Button -->
+
+                </ul>
+            </div>
+
+
+
+        </nav>
+    </header>
+
