@@ -1,0 +1,19 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Anitha
+ * Date: 12/16/2015
+ * Time: 12:52 PM
+ */
+?>
+<?php echo $__env->make('layouts.adminlte.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.adminlte.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+ <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper row" >
+        <?php echo $__env->yieldContent('contents'); ?>
+
+
+    <!-- /.content -->
+</div><!-- /.content-wrapper -->
+
+<?php echo $__env->make('layouts.adminlte.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

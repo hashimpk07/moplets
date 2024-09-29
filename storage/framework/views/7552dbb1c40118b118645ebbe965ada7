@@ -1,0 +1,21 @@
+<?php $__env->startSection('contents'); ?>
+   <section class="content-header" >
+    <div class="mop">
+        <h1>
+            Change Password
+        </h1>
+    </div>
+    <div class="box-tools">
+    </div>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <?php echo $__env->make('password.add', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            </div>
+        </div>
+    </section>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.adminlte.inner', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

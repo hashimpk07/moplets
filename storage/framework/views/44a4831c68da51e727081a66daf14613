@@ -1,0 +1,60 @@
+
+
+
+
+<?php $__env->startSection('BRAND_COLOR', $BRAND_COLOR); ?>
+<?php $__env->startSection('BRAND_IMAGE', \Qudratom\Utilities\FileUpload::downloadUrl($BRAND_IMAGE)); ?>
+
+<?php $__env->startSection('contents'); ?>
+    <section class="content-header ">
+        <h1>Settings</h1>
+    </section>
+    <!-- Content Header (Page header) -->
+    <section class="content ">
+
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Custom Tabs (Pulled to the right) -->
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <!--<li class="pull-left header"><i class="fa fa-th"></i> Custom Tabs</li>-->
+                        <li class="active" ><a href="#tab_2-2" data-toggle="tab">API</a></li>
+                        <li><a href="#tab_1-1" data-toggle="tab">Parameters</a></li>
+                        <li><a href="#tab_3-2" data-toggle="tab">Branding</a></li>
+                    </ul>
+                    <div class="tab-content col-md-12">
+
+                        <div class="tab-pane active" id="tab_2-2">
+                            <div class="row">
+                                <?php echo $__env->make('settings.api-call', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                                <?php echo $__env->make('settings.api-incoming', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="tab_1-1">
+                            <div class="row">
+                                <?php echo $__env->make('settings.parameters-call-permitted-time', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                                <?php echo $__env->make('settings.parameters-ivr', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+                            </div>
+                        </div><!-- /.tab-pane -->
+                        <!-- /.tab-pane -->
+
+                        <div  class="tab-pane" id="tab_3-2">
+                            <div class="row">
+                                <?php echo $__env->make('settings.branding-general', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                                <?php echo $__env->make('settings.branding-modules', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+                            </div>
+                        </div>
+                        <!-- /.tab-pane -->
+                    </div><!-- /.tab-content -->
+                </div><!-- nav-tabs-custom -->
+            </div><!-- /.col -->
+        </div>
+        <!-- /.col (left) -->           <!-- /.row -->
+    </section>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.adminlte.inner', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

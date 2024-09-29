@@ -1,0 +1,58 @@
+<?php $__env->startSection('contents'); ?>
+        <!-- form branch -->
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <div class="mop">
+        <h1>
+            Executives
+        </h1>
+
+    </div>
+
+    <div class="box-tools">
+
+
+
+    </div>
+    <?php echo $__env->make('shared.search', [ 'SEARCH_CONTROLLER_PREFIX' => "Executive" ], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <button type="button" style="float:right;" onclick="actionForm('<?php echo  action('ExecutiveController@add'); ?>', {}, 'ExecutiveAddWrap' )" id="add" class="button-rows">
+            <i class="ace-icon glyphicon glyphicon-plus bigger-110"></i>
+            New
+        </button>
+
+</section>
+
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Horizontal Form -->
+            <div id="ExecutiveAddWrap" ></div>
+
+        </div>
+    </div>
+
+</section>
+
+<div class="col-md-12">
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title"></h3>
+
+
+
+        </div>
+
+        <div id="ExecutiveTableWrap">
+            <?php echo $tablehtml; ?>
+
+
+        </div>
+
+        <!-- /.box-body -->
+    </div>
+</div>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.adminlte.inner', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

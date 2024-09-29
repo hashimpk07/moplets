@@ -1,0 +1,23 @@
+<div class="col-md-6">
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Top Calling</h3>
+        </div><!-- /.box-header -->
+        <div class="box-body">
+            <table class="table table-condensed">
+                <?php if( count($topBranches) > 0 ): ?>
+                    <?php foreach( $topBranches as $one ): ?>
+                        <tr>
+                            <td><?php echo e($one->branch); ?></td>
+                            <td><span class="badge bg-red"><?php echo e($one->cnt); ?></span></td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="2">No data for today</td>
+                    </tr>
+                <?php endif; ?>
+            </table>
+        </div><!-- /.box-body -->
+    </div>
+</div>

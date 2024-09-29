@@ -1,0 +1,50 @@
+
+<?php $__env->startSection('contents'); ?>
+
+        <!-- Content Wrapper. Contains page content -->
+<!-- form branch -->
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Comparison Charts
+
+    </h1>
+
+
+
+</section>
+
+
+<section class="content ">
+
+    <?php echo $__env->make('comparison.form', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <!-- /.col (left) -->
+    <!-- /.row -->
+
+</section>
+
+
+<div class="col-md-12">
+
+</div>
+
+
+<!-- /.content -->
+<!-- /.content-wrapper -->
+<script type="text/javascript">
+
+    function doExecutiveValidation()
+    {
+        return true ;
+    }
+    document.addEventListener('onPageReady', function (e) {
+        /* submitForm( formName, beforeFunctionm, afterFunction, targetId, autofill json response); */
+        submitForm('ComparisonForm', doExecutiveValidation, function(data) { }, 'ComparisonTableWrap', true, {
+
+        } );
+    }) ;
+</script>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.adminlte.inner', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

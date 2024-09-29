@@ -1,0 +1,36 @@
+
+
+<?php $__env->startSection('contents'); ?>
+<!-- form branch -->
+<!-- Content Header (Page header) -->
+<section class="content-header" >
+    <div class="mop">
+        <h1>
+            Employees
+        </h1>
+    </div>
+    <div class="box-tools">
+        <?php echo $__env->make('shared.search', [ 'SEARCH_CONTROLLER_PREFIX' => "Employee" ], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    </div>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Horizontal Form -->
+        </div>
+    </div>
+</section>
+<div class="col-md-12">
+    <div class="box">
+        <div class="box-header with-border">
+        </div><!-- /.box-header -->
+        <div id="EmployeeTableWrap">
+            <?php echo $tablehtml; ?>
+
+        </div>
+        <!-- /.box-body -->
+    </div>
+</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.adminlte.inner', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

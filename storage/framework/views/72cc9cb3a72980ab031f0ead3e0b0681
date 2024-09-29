@@ -1,0 +1,25 @@
+<?php if( count($records) < 1 ): ?>
+    <tr class="qrd-norecords"><td colspan="100%"><?php echo DEFAULT_NO_RECORD_MESSAGE; ?></td></tr>
+    <?php return ; ?>
+<?php endif; ?>
+<?php foreach($records as $record ): ?>
+    <tr>
+        <td><?php echo e($records->recordno->getNext()); ?></td>
+      <!--  <td><?php //echo "date";?></td>-->
+        <td> <?php echo e(\Qudratom\Utilities\DateTime::clientDateTime($record->createdat)); ?></td>
+        <td><?php echo e($record->rcustomer); ?></td>
+        <td><?php echo e($record->rphone); ?></td>
+        <?php  if(CONST_MODULE_EMPLOYEE==1) { ?>
+        <td><?php echo e($record->empname); ?></td>
+        <?php } if(CONST_MODULE_BRANCH==1) { ?>
+        <td><?php echo e($record->branchname); ?></td>
+        <?php } ?>
+        <td><?php echo e($record->llocations); ?></td>
+        <?php  if(CONST_MODULE_REGION==1) { ?>
+        <td><?php echo e($record->regname); ?></td>
+        <?php  } ?>
+        <td><?php echo e(\App\Models\Virtual\CallStatus::explain( $record->callstatus)); ?></td>
+        <td><?php echo e(\App\Models\Virtual\ResponseStatus::explain( $record->responsestatus)); ?></td>
+    </tr>
+
+<?php endforeach; ?>
