@@ -1,0 +1,145 @@
+.mform_btn{
+    margin: 0 5px !important;
+}
+.action tr:first-child td {
+    border: 1px solid rgba(87, 87, 87, 0.64);
+    padding: 2px 4px;
+    border-radius: 3px !important;
+}
+.panel-body {
+    padding: 15px 0 !important;
+}
+.file_container {
+    max-width: 33% !important;
+}
+@media (max-width: 480px) {
+    .file_container {
+        max-width: 84% !important;
+    }
+}
+.form-control[disabled] {
+    background: transparent none repeat scroll 0% 0% !important;
+    cursor: default;
+}
+.cgm-thumb
+{
+    border: 1px solid silver;
+    padding: 3px;
+    margin: 5px;
+}
+.cgm-disabled{
+    background: #E7E7E7 !important;
+    pointer-events: none;
+}
+.cgm-popup-button
+{
+    display: none !important;
+}
+#idMasterPopup .form-actions button[type=button]
+{
+    display: none;
+}
+.cgm-master-link
+{
+    float: left;
+    margin-left: 5px;
+    text-decoration: underline;
+    font-size: 0.9em;
+    text-transform: lowercase;
+    cursor: pointer;
+}
+/* Transform edit page to view */
+
+.CGM-VIEW input, .CGM-VIEW select, .CGM-VIEW textarea, *:disabled
+{
+    user-select: none;
+    pointer-events: none;
+    background: #E7E7E7 !important;
+}
+.CGM-VIEW .cgm-no-view
+{
+    display: none;
+}
+.CGM-ADD .cgm-no-add
+{
+    display: none;
+}
+.CGM-EDIT .cgm-no-edit
+{
+    display: none;
+}
+
+.CGM-VIEW .cgm-disabled-view
+{
+    pointer-events: none;
+}
+.CGM-ADD .cgm-disabled-add
+{
+    pointer-events: none;
+}
+.CGM-EDIT .cgm-disabled-edit input, .CGM-EDIT .cgm-disabled-edit button, .CGM-EDIT .cgm-disabled-edit select, .CGM-EDIT .cgm-disabled-edit textarea {
+    background: #E7E7E7 !important;
+}
+.CGM-EDIT .cgm-disabled-edit
+{
+    pointer-events: none;
+}
+.cursor-pointer
+{
+    cursor: pointer;
+}
+#idSuccessFailureMsgWrap
+{
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: white;
+    z-index: 9999;
+}
+#idSuccessMsg:empty, #idFailureMsg:empty{
+    display: none;
+}
+#idSuccessMsg, #idFailureMsg
+{
+    box-shadow: 0 0 13px 1px #d6d6d6;
+    background: #FFF;
+    text-shadow: white;
+    text-align: center;
+    z-index: 322222;
+    width: 100%;
+    padding: 4px;
+}
+
+#idFailureMsg
+{
+    color: red;
+}
+#idSuccessMsg
+{
+    color: green;
+}
+.dataTables_length
+{
+    display: none;
+}
+.cgm-tip label{
+    font-size: 0.8em;
+}
+.cgm-tip label
+{
+    clear: both;
+
+}
+.cgm-norecords
+{
+    text-align: center;
+}
+.cgm-datatable tr th:last-child, .cgm-datatable tr td:last-child,
+.cgm-datatable tr th:first-child, .cgm-datatable tr td:first-child
+{
+    width: 1%;
+    white-space:nowrap;
+}
+.clear {
+    clear: both;
+}
